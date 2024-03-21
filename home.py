@@ -7,7 +7,7 @@ import cv2
 from PIL import Image, ImageOps
 import numpy as np
 
-@st.cache
+@st.cache(allow_output_mutation=True)
 def load_model():
     url = "https://drive.google.com/uc?id=144uxP9sepud62pjRlsvwMXxgvuBlhvFb"
     output = "model/solar_panel_inspection.hdf5"
