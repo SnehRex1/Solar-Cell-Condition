@@ -4,14 +4,17 @@ from keras.applications.imagenet_utils import preprocess_input, decode_predictio
 import urllib.request
 import gdown
 
+import streamlit as st
 
-@st.cache_resource
+@st.cache
 def load_model():
-  
-  url = "https://drive.google.com/file/d/1S_JhP8JEznVK3bw6IMm9GxNeWH5jbAj4/view?usp=sharing"
-  output = "model/solar_panel_inspection.hdf5"
-  gdown.download(url=url, output=output, quiet=False, fuzzy=True)
-  
+    url = "https://drive.google.com/file/d/1S_JhP8JEznVK3bw6IMm9GxNeWH5jbAj4/view?usp=sharing"
+    output = "model/solar_panel_inspection.hdf5"
+    gdown.download(url=url, output=output, quiet=False, fuzzy=True)
+    pass
+
+# Call the function to load the model
+model = load_model()
 
 with st.spinner('Model is being loaded..'):
   model=load_model()
