@@ -9,14 +9,14 @@ import gdown
 def load_model():
   
   url = "https://drive.google.com/file/d/1S_JhP8JEznVK3bw6IMm9GxNeWH5jbAj4/view?usp=sharing"
-  output = "model/solar_panel_inspection .hdf5"
+  output = "model/solar_panel_inspection.hdf5"
   gdown.download(url=url, output=output, quiet=False, fuzzy=True)
   
 
 with st.spinner('Model is being loaded..'):
   model=load_model()
 
-MODEL_PATH = 'model/solar_panel_inspection .hdf5'
+MODEL_PATH = 'model/solar_panel_inspection.hdf5'
 model=tf.keras.models.load_model(MODEL_PATH)  
 
 st.write("""
