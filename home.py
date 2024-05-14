@@ -9,7 +9,7 @@ import streamlit as st
 @st.cache
 def load_model():
     url = "https://drive.google.com/drive/folders/1GDmA90CgWRaRVY94gTLOSMNZ2pWacA0e"
-    output = "model/solar_panel_inspection.hdf5"
+    output = "https://drive.google.com/drive/folders/1GDmA90CgWRaRVY94gTLOSMNZ2pWacA0e"
     gdown.download(url=url, output=output, quiet=False, fuzzy=True)
     pass
 
@@ -19,7 +19,7 @@ model = load_model()
 with st.spinner('Model is being loaded..'):
   model=load_model()
 
-MODEL_PATH = 'model/solar_panel_inspection.hdf5'
+MODEL_PATH = 'https://drive.google.com/drive/folders/1GDmA90CgWRaRVY94gTLOSMNZ2pWacA0e'
 model=tf.keras.models.load_model(MODEL_PATH)  
 
 st.write("""
